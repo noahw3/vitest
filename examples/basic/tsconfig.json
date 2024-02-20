@@ -1,13 +1,43 @@
 {
-  "compilerOptions": {
-    "target": "es2020",
-    "module": "node16",
-    "strict": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "verbatimModuleSyntax": true
+  "ts-node": {
+    "files": true,
+    "require": ["tsconfig-paths/register"]
   },
-  "include": ["src", "test"],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2018",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "module": "commonjs",
+    "paths": {
+      "@/*": ["src/*"],
+      "@test/*": ["test/*"]
+    },
+    "resolveJsonModule": true,
+    "types": ["vitest/globals"],
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "declaration": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "outDir": "./dist",
+    "removeComments": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["cdk.out", "node_modules", "dist"]
 }
